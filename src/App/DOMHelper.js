@@ -3,6 +3,19 @@ export class DOMHelper {
     this.body = document.querySelector("body");
   }
   appendToDOM(jsonObject, title) {
+    if (
+      jsonObject.Year === undefined &&
+      jsonObject.Rated === undefined &&
+      jsonObject.Released === undefined
+    ) {
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      p.textContent = "Please enter a valid movie/show title";
+      li.append(p);
+      const body = document.querySelector("body");
+      body.append(li);
+      return;
+    }
     const li = document.querySelectorAll("li");
     if (li.length > 0) {
       li.forEach((li) => {
