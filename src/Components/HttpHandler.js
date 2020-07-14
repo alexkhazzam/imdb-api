@@ -51,7 +51,7 @@ export class HttpHandler {
     }
     const responseData = await this.sendHttpRequest(
       "GET",
-      `http://www.omdbapi.com/?&t=${this.movieTitle.value.trim()}&apikey=78628677`
+      `https://www.omdbapi.com/?&t=${this.movieTitle.value.trim()}&apikey=78628677`
     );
     const rd = responseData;
     this.title = rd.Title;
